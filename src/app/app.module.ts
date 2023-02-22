@@ -5,7 +5,7 @@ import { AppComponent } from './app.component';
 import { UserGridComponent } from './user-grid/user-grid.component';
 import { UserFormComponent } from './user-form/user-form.component';
 import { UserInformationComponent } from './user-information/user-information.component';
-import {RouterModule} from "@angular/router";
+import {Routes,RouterModule} from "@angular/router";
 
 @NgModule({
   declarations: [
@@ -17,8 +17,11 @@ import {RouterModule} from "@angular/router";
   imports: [
     BrowserModule,
     RouterModule.forRoot([
+      {path:'',redirectTo: 'user-grid',pathMatch:'full'},
       {path:'user-information',component: UserInformationComponent},
       {path:'user-form',component:UserFormComponent},
+      {path:'user-grid',component:UserGridComponent}
+
     ])
   ],
   providers: [],
